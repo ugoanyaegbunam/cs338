@@ -1,0 +1,31 @@
+level 0:
+  password is bandit0, it is on the page for level 0
+level 0->1:
+  password is ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If. Level 0->1 page says that the password is in a file called readme. use "cat readme" to see the contents of the file.
+  Then you have to exit and ssh again but instead of bandit0 do bandit 1 with the new password.
+level 1->2:
+  password is 263JGJPfgU6LtdEvgfWU1XP5yac29mFx. You get this by doing cat < - which essentially funnels the file named "-" as the input for the cat command
+level 2->3:
+  password is MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx. You get this by running cat spaces\ in\ this\ filename which handles the spaces in the filename with backslashes. 
+  Can also just put the whole filename in quotes.
+level 3->4:
+  password is 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ. You get this from running "cd inhere" to switch the directory and then "ls -a" to display hidden files along with everything else.
+level 4->5:
+  password is 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw. I got this from "cd inhere" to switch directories. Then was to lazy to type out file for each individual file I saw so I did research
+  and found "find . -type f -name '*file*' -exec file {} \;" which listed all of them for me and then I ran "cat ./-file07" because it was the only one with ascii text contents
+level 5->6:
+  password is HWasnPhtq9AVKe0dmk45nxy20cvUa6EG. I got this from "cd inhere" then "du -b -a -t -1033" and then i ran "cat ./maybehere07/.file2" because that was the file that fit the size description
+level 6->7:
+  password is morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj.The start directory was empty so i ran "cd .." and then ls and saw a bunch of stuff. I then ran "ls -aR -l | grep "33" | grep "bandit7"" and foudn that the password was stored in a file called
+  bandit7.password. I then ran "find -name "*.password* | grep "bandit7"" to find the path of said file which was ./var/lib/dpkg/info/bandit7.password. Then ran cat bandit7.password
+level 7->8:
+  password is dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc. i ran "find data.txt" and saw it was right there. then I ran grep "millionth" data.txt.
+level 8->9:
+  password is 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM. i ran " sort -r data.txt | uniq -u"
+level 9->10:
+  password is FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey. I ran "strings data.txt" and looked at the line with all the equal signs.
+level 10->11:
+  password is dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr. I ran "base64 -d data.txt"
+level 11->12:
+  password is 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4. I ran "cat data.txt | tr 'a-zA-Z' 'n-za-mN-ZA-M'"
+  
